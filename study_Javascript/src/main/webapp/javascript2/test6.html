@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test6</title>
+<script type="text/javascript">
+	/*
+	정수 1개를 입력받아 변수에 저장 후 기존에 저장된 정수(correctNum)와 비교하여 
+	일치 여부 확인한 후 결과를 출력하는 startNumberGame() 함수 정의
+	-------------------------------------------------------------
+	[1단계]
+	1) 다이얼로그를 사용하여 숫자 1개를 입력받아 입력받은 숫자 출력하기
+	----------------
+	[2단계]
+	2) 입력받은 숫자를 기존에 저장된 정수(correctNum)과 비교하여 판별 결과 출력
+	- 기존에 저장된 숫자가 입력받은 숫자보다 클 경우 : "입력받은 숫자보다 큽니다!" 출력
+	- 기존에 저장된 숫자가 입력받은 숫자보다 작을 경우 : "입력받은 숫자보다 작습니다!" 출력
+	- 기존에 저장된 숫자가 입력받은 숫자와 같을 경우 : "정답입니다!" 출력
+	----------------
+	[3단계]
+	반복문 사용
+	1) 정답이 입력받은 숫자보다 작거나 클 경우(정답이 아닐 경우) 다시 숫자 입력받기
+	   => while(true) 문장 사용 시 무한 루프
+	   => 정답일 경우 break 문을 사용하여 while 문 빠져나가기
+	2) 이 때, 정답일 경우 반복문 종료 후 숫자를 입력한 횟수를 계산하여 "x번만에 정답!" 출력
+	*/
+	
+	function startNumberGame() {
+		var correctNum = 50; // 정답을 저장하는 변수
+		var Num = prompt("정수를 입력하세요.");
+		var Total = 0;
+// 		alert("입력받은 정수 : " + Num);
+		
+		//
+		while(true) {
+			if(Num == "") {
+				alert("숫자 입력 필수");
+				continue;
+			
+			} else if (Num == null) {
+				alert("게임을 취소합니다");
+				// return 문을 사용하여 현재 실행중인 함수 중단하고 호출한 곳으로 돌아가기
+				return;
+			}
+			Total ++;
+		
+			if(Num == correctNum) {
+				alert("정답입니다.");
+				document.write("<h3>" + Total + "번만에 정답</h3>");
+				break;
+			} else if(Num < correctNum) {
+				alert("입력받은 숫자보다 큽니다.");
+				Num = prompt("정수를 다시 입력해 주세요.")
+			} else {
+				alert("입력받은 숫자보다 작습니다.");
+				Num = prompt("정수를 다시 입력해 주세요.")
+			}
+			
+		} // while문 끝
+		document.write("숫자 게임 종료");
+		document.write("<br>입력 횟수 : " + Total + "회");
+	} // startNumberGame() 함수 끝
+// 	startNumberGame();
+	
+</script>
+</head>
+<body>
+	<h3><input type="button" value="숫자게임 시작" onclick="startNumberGame()"></h3>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>document 객체 기초</title>
+<script type="text/javascript">
+	/*
+	[ window 객체의 하위 객체 - document ]
+	*/
+	function func1() {
+		
+		alert(document.title);
+	}
+	function func2() {
+		
+		document.title = "변경된 타이틀";
+	}
+	function func3() {
+		
+		alert("bgColor : " + document.bgColor + "\nfgColor : " + document.fgColor);
+	}
+	function func4() {
+		
+// 		document.bgColor = "YELLOW";
+// 		document.fgColor = "BLUE";
+
+		
+		document.bgColor = "#FFFF00";
+		document.fgColor = "0000FF";
+	}
+	
+	
+	function func5(color) {
+		document.bgColor = color;
+	}
+	
+</script>
+</head>
+<body>
+	<h1>test7.html - document</h1>
+	<input type="button" value="문서 제목 출력" onclick="func1()"><br>
+	<input type="button" value="문서 제목 변경" onclick="func2()"><br>
+	<input type="button" value="문서 배경색 출력" onclick="func3()"><br>
+	<input type="button" value="문서 배경색 변경" onclick="func4()"><br>
+	<hr>
+<!-- 	<input type="radio" name="bgColor" value="CYAN" onclick="func5('CYAN')">CYAN -->
+<!-- 	<input type="radio" name="bgColor" value="MAGENTA" onclick="func5('MAGENTA')">MAGENTA -->
+<!-- 	<input type="radio" name="bgColor" value="GRAY" onclick="func5('GRAY')">GRAY -->
+
+	
+	<input type="radio" name="bgColor" value="CYAN" onclick="func5(this.value)">CYAN
+	<input type="radio" name="bgColor" value="MAGENTA" onclick="func5(this.value)">MAGENTA
+	<input type="radio" name="bgColor" value="GRAY" onclick="func5(this.value)">GRAY
+</body>
+</html>

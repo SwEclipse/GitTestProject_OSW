@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test7</title>
+<script type="text/javascript">
+	/*
+	자바스크립트에서의 형변환
+	
+	< 명시적 형변환 기본 문법 >
+	데이터타입(데이터)
+	*/
+	
+	// 1. 문자(String) 타입으로 변환
+	// => 참고, alert() 함수의 파라미터는 string 타입
+	//    다른 타입 전달 시 자동으로 string 타입으로 변환
+	// => String(데이터)
+	var value1 = 1;
+	document.write(value1 + " => 변환 전 타입 : " + typeof(value1) + "<br>");
+	
+	// number 타입인 value1 변수의 타입을 문자 타입(string)으로 변환
+	value1 = String(value1);
+	document.write(value1 + " => 변환 후 타입 : " + typeof(value1) + "<br>");
+	
+	var value2 = true;
+	document.write(value2 + " => 변환 전 타입 : " + typeof(value2) + "<br>");
+	
+	// boolean 타입인 value2 변수의 타입을 문자 타입(string)으로 변환
+	value2 = String(value2);
+	document.write(value2 + " => 변환 후 타입 : " + typeof(value2) + "<br>");
+	// =================================================================
+	// 2. 숫자(number) 타입으로 변환
+	// - 수학 관련 함수나 연산자를 사용한 연산 과정에서는 자동으로 숫자 타입 형변환 일어남
+	// - 변환 방법 : Number(데이터)
+	document.write("10" / "5"); // string / string = number / number 로 변환 후 연산
+	document.write("<hr>");
+	
+	// "정수를 입력하세요" 창을 통해 숫자 1개를 입력받아 strNum 변수에 저장
+	var strNum = prompt("정수를 입력하세요");
+	document.write(strNum + " => 변환 전 타입 : " + typeof(strNum) + "<br>");
+
+	var num = Number(strNum);
+	document.write(num + " => 변환 후 타입 : " + typeof(num) + "<br>");
+
+ 	switch(Number(strNum)) { // switch(num) 과 결과 동일
+	case 1 :
+		document.write("<h3>입력된 값은 1 입니다</h3>")
+		break;
+	case 2 :
+		document.write("<h3>입력된 값은 2 입니다</h3>")
+		break;
+	}
+ 	
+ 	document.write("<hr>");
+ 	// ======================================================================
+ 	
+ 	// => NaN : Not a Number 의 약자	
+ 	var strNum2 = "1234a";
+ 	document.write(strNum2 + " => 변환 전 타입 : " + typeof(strNum2) + "<br>");
+ 	
+ 	var num2 = Number(strNum2);
+ 	document.write(num2 + " => 변환 후 타입 : " + typeof(num2) + "<br>");
+ 	
+ 	document.write("<hr>");
+ 	// ======================================================================
+ 	var age = 15;
+ 	
+ 	age = parseInt(age / 10);
+ 	document.write(age);
+ 	
+ 	// => parseInt(값) : 지정된 값을 정수 형태로 변환해 줌
+ 	if(age == 1) {
+ 		document.write("<br>10대");
+ 	}
+</script>
+</head>
+<body>
+
+</body>
+</html>

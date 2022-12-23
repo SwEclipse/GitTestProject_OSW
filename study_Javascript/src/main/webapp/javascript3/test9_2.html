@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	// setInterval() 함수를 통한 타이머 객체를 저장할 변수 선언(전역변수로 선언)
+	// => 전역변수? 모든 함수(= 자바스크립트 객체)
+	var timer;
+	/*
+	[ innerText vs innerHTML ]
+	*/
+	
+	
+	function funcInnerText() {
+		
+		let divAreaText = document.getElementById("divAreaText");
+		
+		divAreaText.innerText = "<h3>innerText 로 변경한 텍스트</h3>";
+	}
+	function funcInnerHtml() {
+		let divAreaHtml = document.getElementById("divAreaHtml");
+		
+		divAreaHtml.innerHTML = "<h3>innerHTML 로 변경한 텍스트</h3>";
+	}
+	function showDate() {
+		let date = new Date();
+		document.getElementById("divDate");
+		divAreaHtml.innerHTML = date;
+	}
+	function showTimer() {
+		/*
+		
+		< 기본 문법 >
+		setInterval(함수, 반복주기);
+		
+		< 반복 중지 기본 문법 >
+		clearInterval(중지할 타이머 객체);
+		*/
+		refreshTimer();
+		
+		// setInterval() 함수를 통해 반복 실행하는 인터벌 객체를 timer 변수에 저장하면
+		// 다른 함수에서 해당 타이머에 접근이 가능하며, 중지도 가능
+		timer = setInterval(refreshTimer, 1000);
+	}
+	
+	function stopTimer() {
+		// 전역변수로 선언되어 있는 타이머 변수에 접근하여 타이머 중지
+		clearInterval(timer);
+// 		document.getElementById("divTimer").innerHTML = ""; // div 영역 타이머 제거
+	}
+	
+	function refreshTimer() {
+		let timer = document.getElementById("divTimer");
+		let now = new Date();
+		timer.innerHTML = now;
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+	<h1>test9_2.html</h1>
+	<button onclick="funcInnerText()">innerText</button>
+	<button onclick="funcInnerHtml()">innerText</button>
+	<div id="divAreaText"><!-- innerText 로 내용을 변경할 위치 --></div>
+	<div id="divAreaHtml"><!-- innerHTML 로 내용을 변경할 위치 --></div>
+	<hr>
+	<button onclick="showDate()">날짜 및 시각 표시</button>
+	<div id="divDate"><!-- 날짜 및 시각(let date = new Date();) 표시할 위치 --></div>
+	<hr>
+	<button onclick="showTimer()">타이머 표시</button>
+	<button onclick="stopTimer()">타이머 중지</button>
+	<div id="divTimer"><!-- 타이머 표시할 위치 --></div>
+</body>
+</html>

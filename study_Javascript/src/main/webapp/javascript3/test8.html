@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	
+	
+	document.write("document 객체 : " + document + "<br>");
+	
+	
+	document.write("document.documentElement : " + document.documentElement + "<br>");
+	
+	document.write("document.head : " + document.head + "<br>");
+	
+	document.write("document.body : " + document.body + "<br>");
+
+</script>
+</head>
+<body>
+	<h1>test8.html</h1>
+	<div>목록 시작</div>
+	<ul>
+		<li>항목1</li>
+		<li>항목2</li>
+	</ul>
+	<div>목록 끝</div>
+	<script type="text/javascript">
+		for(let i = 0; i < document.body.childNodes.length; i++) {
+			alert(document.body.childNodes[i] + " : " + document.body.childNodes[i].nodeName + "<br>");
+		}
+// 		for(let i = 0; i < document.body.childNodes.length; i++) {
+// 			alert(document.body.childNodes[i] + " : " + document.body.childNodes[i].nodeName + "<br>");
+// 							
+// 		}
+	</script>
+</body>
+</html>
